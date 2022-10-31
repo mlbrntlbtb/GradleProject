@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.gradleproject'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.5.3'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.3.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4.2'
+    implementation 'org.skyscreamer:jsonassert:1.5.1'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.6.1'
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.2.0'
+    testImplementation group: 'com.github.tomakehurst', name: 'wiremock-jre8', version: '2.34.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+    //useTestNG()
+}
