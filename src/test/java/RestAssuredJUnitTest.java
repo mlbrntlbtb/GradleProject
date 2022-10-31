@@ -38,7 +38,7 @@ public class RestAssuredJUnitTest
         wireMockServer.start();
 
         //Configure host and port
-        configureFor("localhost", 8080);
+        configureFor("localhost", 8090);
         baseUrl = "http://localhost:8080";
 
         //Create HTTP request
