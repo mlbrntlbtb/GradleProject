@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.*;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import entities.Country;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -34,12 +35,12 @@ public class RestAssuredJUnitTest
     public static void Initialize()
     {
         //Create wiremock server instance
-        wireMockServer = new WireMockServer();
+        wireMockServer = new WireMockServer(new WireMockConfiguration().port(7070));
         wireMockServer.start();
 
         //Configure host and port
-        configureFor("localhost", 8090);
-        baseUrl = "http://localhost:8080";
+        configureFor("localhost", 7070);
+        baseUrl = "http://localhost:7070";
 
         //Create HTTP request
         requestSpecification = RestAssured.given().baseUri(baseUrl);

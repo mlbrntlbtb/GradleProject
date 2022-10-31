@@ -6,7 +6,7 @@ public class SeleniumTestNGTest
 {
     private static WebDriver AutoDriver;
     @BeforeAll
-    public void Initialize()
+    public static void Initialize()
     {
         AutoDriver = WebDriverManager.chromedriver().create();
         AutoDriver.manage().window().maximize();
@@ -20,7 +20,7 @@ public class SeleniumTestNGTest
     }
 
     @AfterAll
-    public void Teardown()
+    public static void Teardown()
     {
         AutoDriver.quit();
     }
